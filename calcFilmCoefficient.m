@@ -6,7 +6,6 @@
 % equation described in source: https://jffhmt.avestia.com/2015/PDF/006.pdf
 
 clc; clear; close all;
-
 %% INPUT DEFINITION
 % R_x.mat is the pre-calculated interior contour of the engine, calculate
 % this yourself or use the Parametric-Engine-Generator script on the GitHub
@@ -103,17 +102,15 @@ filmCoefficientPlot = figure('Name','Film Coefficient');
 subplot(2,1,1)
 plot(R_x(1,:),h_film,'-r');
 grid on
-grid minor
 title('Convective Film Coefficient vs. Length')
-xlabel('L_e [m]');
-ylabel('h_v, Film Coefficient [W/(m^2*K)]')
+xlabel('$L_{e}$ $[m]$');
+ylabel('$h_{film}$ $[\frac{W}{m^{2}K}]$')
 xlim([R_x(1,1),R_x(1,end)])
 
 subplot(2,1,2)
 plot(R_x(1,:),R_x(2,:),'-k')
 grid on
-grid minor
 title('Interior Engine Contour')
-xlabel('L_e [m]'); ylabel('R [m]')
-xlim([R_x(1,1),R_x(1,end)])
-axis equal;
+xlabel('$L_{e}$ $[m]$'); ylabel('$R$ $[m]$')
+axis equal
+xlim([R_x(1,1),R_x(1,end)]); ylim([0 1.5*max(R_x(2,:))]);
