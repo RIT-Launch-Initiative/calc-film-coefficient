@@ -114,3 +114,5 @@ title('Interior Engine Contour')
 xlabel('$L_{e}$ $[m]$'); ylabel('$R$ $[m]$')
 axis equal
 xlim([R_x(1,1),R_x(1,end)]); ylim([0 1.5*max(R_x(2,:))]);
+
+saveas(filmCoefficientPlot,'filmCoefficientPlot','png');
